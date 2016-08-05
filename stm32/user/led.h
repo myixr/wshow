@@ -1,10 +1,7 @@
 #include "stm32f1xx_hal.h"
 
 typedef enum{
-	LED1, /* PC0 */
-	LED2, /* PC1 */
-	LED3, /* PC2 */
-	LED4, /* PC3 */
+	LED1 = 0, /* PC0 */
 } LED_INDEX;
 
 typedef enum{

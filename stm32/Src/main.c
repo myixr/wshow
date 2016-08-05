@@ -37,6 +37,7 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
+#include "user.h"
 
 /* USER CODE END Includes */
 
@@ -64,6 +65,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+  user_init1();
 
   /* USER CODE END 1 */
 
@@ -77,10 +79,11 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_I2C1_Init();
+  MX_I2C2_Init();
   MX_USART1_UART_Init();
 
   /* USER CODE BEGIN 2 */
+  user_init2();
 
   /* USER CODE END 2 */
 
@@ -91,6 +94,7 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+	  user_loop();
 
   }
   /* USER CODE END 3 */
@@ -126,8 +130,6 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-
-  HAL_RCC_EnableCSS();
 
   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
 

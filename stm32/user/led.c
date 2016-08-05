@@ -3,8 +3,8 @@
 #include "led.h"
 
 void led_control( LED_INDEX idx, LED_CONTROL ctrl ){
-	static uint16_t pins[] = { GPIO_PIN_0,GPIO_PIN_1,GPIO_PIN_2,GPIO_PIN_3 };
-	assert_param( idx==LED1 || idx==LED2 || idx==LED3 || idx==LED4  );
+	static uint16_t pins[] = { GPIO_PIN_13 };
+	assert_param( idx==LED1 );
 	assert_param( ctrl==LED_ON || ctrl==LED_OFF || ctrl== LED_TURN );
 
 	uint16_t pin = pins[idx];
@@ -20,5 +20,4 @@ void led_control( LED_INDEX idx, LED_CONTROL ctrl ){
 		else state = GPIO_PIN_SET;
 		HAL_GPIO_WritePin( GPIOC, pin, state );
 	}
-	GPIO_PIN_0;
 }

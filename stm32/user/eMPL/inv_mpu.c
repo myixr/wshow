@@ -115,7 +115,7 @@ static inline int reg_int_cb(struct int_param_s *int_param)
 /* UC3 is a 32-bit processor, so abs and labs are equivalent. */
 #define labs        abs
 #define fabs(x)     (((x)>0)?(x):-(x))
-#elif defined( MOTION_DRIVER_TARGET_STM32 )
+#elif defined MOTION_DRIVER_TARGET_STM32
   #include "platform_stm32.h"
 #else
 #error  Gyro driver is missing the system layer implementations.
@@ -773,7 +773,7 @@ int mpu_init(struct int_param_s *int_param)
     if (mpu_configure_fifo(0))
         return -1;
 
-#if !(defined(EMPL_TARGET_STM32F4) || defined(MOTION_DRIVER_TARGET_STM32))
+#ifndef EMPL_TARGET_STM32F4    
     if (int_param)
         reg_int_cb(int_param);
 #endif

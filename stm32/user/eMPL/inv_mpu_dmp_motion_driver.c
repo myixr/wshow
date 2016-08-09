@@ -71,8 +71,7 @@
 #define log_i       MPL_LOGI
 #define log_e       MPL_LOGE
 
-/* Add myself stm32 target */
-#elif defined( MOTION_DRIVER_TARGET_STM32 )
+#elif defined MOTION_DRIVER_TARGET_STM32
   #include "platform_stm32.h"
 
 #else

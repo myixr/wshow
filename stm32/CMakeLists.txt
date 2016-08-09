@@ -9,7 +9,7 @@ SET( CMAKE_TOOLCHAIN_FILE "${STM32_CMAKE_PATH}/cmake/gcc_stm32.cmake" )
 SET( STM32Cube_DIR "/Users/lmy/STM32Cube/Repository/STM32Cube_FW_F1_V1.4.0" )
 
 SET( CMAKE_BUILD_TYPE Debug )
-SET( STM32_CHIP "STM32F103ZE" )
+SET( STM32_CHIP "STM32F103C8" )
 SET( STM32_FAMILY "F1" )
 
 # Linker script
@@ -51,8 +51,10 @@ SET(PROJECT_SOURCES
 	Src/gpio.c
 	Src/i2c.c
 	Src/usart.c
+	user/newlib.c
 	user/user.c
 	user/led.c
+	user/mpu6050.c
 	user/eMPL/inv_mpu.c
 	user/eMPL/inv_mpu_dmp_motion_driver.c
 

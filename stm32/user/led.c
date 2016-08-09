@@ -9,15 +9,15 @@ void led_control( LED_INDEX idx, LED_CONTROL ctrl ){
 
 	uint16_t pin = pins[idx];
 	if( ctrl == LED_ON ){
-		HAL_GPIO_WritePin( GPIOC, pin, GPIO_PIN_RESET );
+		HAL_GPIO_WritePin( GPIOC, GPIO_PIN_13, GPIO_PIN_RESET );
 	}
 	else if( ctrl == LED_OFF ){
-		HAL_GPIO_WritePin( GPIOC, pin, GPIO_PIN_SET );
+		HAL_GPIO_WritePin( GPIOC, GPIO_PIN_13, GPIO_PIN_SET );
 	}
 	else if( ctrl == LED_TURN ){
-		GPIO_PinState state = HAL_GPIO_ReadPin( GPIOC, pin );
+		GPIO_PinState state = HAL_GPIO_ReadPin( GPIOC, GPIO_PIN_13 );
 		if( state == GPIO_PIN_SET ) state = GPIO_PIN_RESET;
 		else state = GPIO_PIN_SET;
-		HAL_GPIO_WritePin( GPIOC, pin, state );
+		HAL_GPIO_WritePin( GPIOC, GPIO_PIN_13, state );
 	}
 }

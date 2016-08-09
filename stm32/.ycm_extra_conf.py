@@ -73,6 +73,8 @@ flags = [
 './uer/lcd',
 '-I',
 './user',
+'-I',
+'./user/eMPL',
 ]
 
 

@@ -361,7 +361,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine />
-              <IncludePath>../Inc;   /Users/lmy/STM32Cube/Repository/STM32Cube_FW_F1_V1.4.0/Drivers/STM32F1xx_HAL_Driver/Inc;   /Users/lmy/STM32Cube/Repository/STM32Cube_FW_F1_V1.4.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;   /Users/lmy/STM32Cube/Repository/STM32Cube_FW_F1_V1.4.0/Drivers/CMSIS/Include;   /Users/lmy/STM32Cube/Repository/STM32Cube_FW_F1_V1.4.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include</IncludePath>
+              <IncludePath>../Inc;    /Users/lmy/STM32Cube/Repository/STM32Cube_FW_F1_V1.4.0/Drivers/STM32F1xx_HAL_Driver/Inc;    /Users/lmy/STM32Cube/Repository/STM32Cube_FW_F1_V1.4.0/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;    /Users/lmy/STM32Cube/Repository/STM32Cube_FW_F1_V1.4.0/Drivers/CMSIS/Include;    /Users/lmy/STM32Cube/Repository/STM32Cube_FW_F1_V1.4.0/Drivers/CMSIS/Device/ST/STM32F1xx/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

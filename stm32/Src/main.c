@@ -65,8 +65,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-  user_init1();
-
+	user_init1();
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -83,7 +82,7 @@ int main(void)
   MX_USART1_UART_Init();
 
   /* USER CODE BEGIN 2 */
-  user_init2();
+		user_init2();
 
   /* USER CODE END 2 */
 
@@ -92,9 +91,9 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
+		user_loop();
 
   /* USER CODE BEGIN 3 */
-	  user_loop();
 
   }
   /* USER CODE END 3 */

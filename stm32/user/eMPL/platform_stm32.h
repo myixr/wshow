@@ -2,8 +2,6 @@
 #define _PLATFORM_STM32_
 
 #include <math.h>
-#include "stm32f1xx_hal_dma.h"
-#include "stm32f1xx_hal_i2c.h"
 #include "i2c.h"
 
 #define __no_operation() __NOP()

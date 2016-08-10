@@ -41,6 +41,7 @@ struct int_param_s {
 #elif defined EMPL_TARGET_STM32F4
     void (*cb)(void);
 #endif
+	int reserved;
 };
 
 #define MPU_INT_STATUS_DATA_READY       (0x0001)

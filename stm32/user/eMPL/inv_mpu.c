@@ -774,8 +774,9 @@ int mpu_init(struct int_param_s *int_param)
         return -1;
 
 #ifndef EMPL_TARGET_STM32F4    
-    if (int_param)
-        reg_int_cb(int_param);
+    if (int_param){
+        //reg_int_cb(int_param);
+		}
 #endif
 
 #ifdef AK89xx_SECONDARY

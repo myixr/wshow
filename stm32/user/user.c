@@ -20,17 +20,24 @@ void user_init1(){
 
 void user_init2(){
 	led_control( LED1, LED_ON );
+		HAL_Delay(1000);
+		led_control( LED1, LED_OFF );
+		HAL_Delay( 1000 );
+		led_control( LED1, LED_ON );
+	
+	HAL_UART_Transmit( &huart1, "hehe\r\n", 6, 0xFFFF );
 	printf( "user init2 start\r\n" );
 
 	mpu6050_init();
 }
 
 void user_loop(){
-	long gyro[3],accel[3],quat[4];
+	short gyro[3],accel[3];
+	long quat[4];
 	float w,x,y,z;
 	unsigned long timestamp;
 	short sensors;
-	char more;
+	unsigned char more;
 	dmp_read_fifo(gyro, accel, quat, &timestamp, &sensors, &more);
 	//printf( "sensors=%d\r\n", sensors );
 	if( sensors & INV_WXYZ_QUAT ){
@@ -41,8 +48,21 @@ void user_loop(){
 		y = quat[2]/1073741824.0f;
 		z = quat[3]/1073741824.0f;
 
-		float a = atan2( 2*(w*x+yz),1-2*(x*x+y*y) );
+		float a = atan2( 2*(w*x+y*z),1-2*(x*x+y*y) );
 		float b = asin( 2*(w*y-z*x) );
 		float c = atan2( 2*(w*z+x*y),1-2*(y*y+z*z) );
+		printf( "%f,%f,%f\n", a, b, c );
 	}
+}
+
+int fputc(int ch, FILE *f)
+{
+	unsigned char c = ch;
+	if( c == '\n' ){
+		unsigned char c = '\r';
+		HAL_UART_Transmit( &huart1, &c, 1, 0xFFFF );
+	}
+	HAL_UART_Transmit( &huart1, &c, 1, 0xFFFF );
+  
+  return ch;
 }

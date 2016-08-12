@@ -6,3 +6,4 @@ stm32/MDK-ARM/RTE/
 stm32/MDK-ARM/*.lst
 stm32/MDK-ARM/DebugConfig
 stm32/MDK-ARM/stm32.uvguix.*
+*.user
